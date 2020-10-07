@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <title>MxGamma</title>
+    </head>
+    <body>
+        <div class="container-fluid bg-dark text-white">
+            Zendikar Rising Limited Tier List
+        </div>
+        <div class="container-fluid bg-dark text-white">
+            <strong>Filters: </strong>
+            <img src="images/wMana.png"/>
+            <input type="checkbox" id="wCheck" checked onclick="showHide('w')">
+            <strong> - - </strong>
+            <img src="images/uMana.png"/>
+            <input type="checkbox" id="uCheck" checked onclick="showHide('u')">
+            <strong> - - </strong>
+            <img src="images/bMana.png"/>
+            <input type="checkbox" id="bCheck" checked onclick="showHide('b')">
+            <strong> - - </strong>
+            <img src="images/rMana.png"/>
+            <input type="checkbox" id="rCheck" checked onclick="showHide('r')">
+            <strong> - - </strong>
+            <img src="images/gMana.png"/>
+            <input type="checkbox" id="gCheck" checked onclick="showHide('g')">
+            <strong> - - </strong>
+            <img src="images/cMana.png"/>
+            <input type="checkbox" id="cCheck" checked onclick="showHide('c')">
+        </div>
+        <div class="container-fluid bg-light" id="tableCont">
+            <div class="row">
+                <!-- White Table -->
+                <div class="col-12 col-md-6 col-lg-4 col-xl-2 border" id="wColumn" style="display:inline-block;">
+                    <div class="card">
+                        <table class="table table-hover" id="wTable">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th onclick="sortTable('wTable')">Card</th>
+                                    <th onclick="autoSortTable('wTable')" style="text-align:center">Score</th>
+                                </tr>
+                            </thead>
+                            <tbody id="wTableB">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Blue Table -->
+                <div class="col-12 col-md-6 col-lg-4 col-xl-2 border" id="uColumn" style="display:inline-block;">
+                    <div class="card">
+                        <table class="table table-hover" id="uTable">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th onclick="sortTable('uTable')">Card</th>
+                                    <th onclick="autoSortTable('uTable')" style="text-align:center">Score</th>
+                                </tr>
+                            </thead>
+                            <tbody id="uTableB">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Black Table -->
+                <div class="col-12 col-md-6 col-lg-4 col-xl-2 border" id="bColumn" style="display:inline-block;">
+                    <div class="card">
+                        <table class="table table-hover" id="bTable">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th onclick="sortTable('bTable')">Card</th>
+                                    <th onclick="autoSortTable('bTable')" style="text-align:center">Score</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bTableB">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Red Table -->
+                <div class="col-12 col-md-6 col-lg-4 col-xl-2 border" id="rColumn" style="display:inline-block;">
+                    <div class="card">
+                        <table class="table table-hover" id="rTable">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th onclick="sortTable('rTable')">Card</th>
+                                    <th onclick="autoSortTable('rTable')" style="text-align:center">Score</th>
+                                </tr>
+                            </thead>
+                            <tbody id="rTableB">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Green Table -->
+                <div class="col-12 col-md-6 col-lg-4 col-xl-2 border" id="gColumn" style="display:inline-block;">
+                    <div class="card">
+                        <table class="table table-hover" id="gTable">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th onclick="sortTable('gTable')">Card</th>
+                                    <th onclick="autoSortTable('gTable')" style="text-align:center">Score</th>
+                                </tr>
+                            </thead>
+                            <tbody id="gTableB">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Gold Table -->
+                <div class="col-12 col-md-6 col-lg-4 col-xl-2 border" id="cColumn" style="display:inline-block;">
+                    <div class="card">
+                        <table class="table table-hover" id="cTable">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th onclick="sortTable('cTable')">Card</th>
+                                    <th onclick="autoSortTable('cTable')" style="text-align:center">Score</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cTableB">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <p>Hosted with GitHub Pages. v.0.1-HTML</p>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script>
+            $(function () {
+                $('[data-toggle="popover"]').popover({trigger: "hover", html: true})
+            })
+        </script>
+        <script>
+            function fillTable(){
+                return 0;
+            }
+        </script>
+
+        <script src="include/znr.js"></script>
+        <script>
+            function createTable(tableData) {
+                tableData.forEach(function(rowData) {
+                    var cardColor = rowData[0];
+                    var tableBody = document.getElementById(cardColor+"TableB");
+                    var row = document.createElement('tr');
+                        row.setAttribute("data-toggle","popover");
+                        row.setAttribute("data-content","<img src='"+rowData[3]+"' />");
+                        row.setAttribute("style","display:table-row");
+                        var cell = document.createElement('td');
+                            cell.setAttribute("style","width:20px");
+                            var cardImage = document.createElement('img');
+                                cardImage.setAttribute("src","images/"+rowData[2]+"Icon.png");
+                                cell.appendChild(cardImage);
+                                row.appendChild(cell);
+                        
+                        cell = document.createElement('td');        
+                            var cardName = document.createTextNode(" "+rowData[1]);
+                                cell.appendChild(cardName);
+                                var n;
+                                var rowLength = rowData.length;
+                                if(cardColor=="c" && rowLength == 5){
+                                    row.setAttribute("bgcolor","#909090");
+                                }
+                                if(rowLength > 5){
+                                    cardName = document.createTextNode(" ");
+                                    cell.appendChild(cardName);
+                                }
+                                for(n = 5; n < rowLength; n++){
+                                    if(rowData[n]=="l"){
+                                        row.setAttribute("bgcolor","#94714f");
+                                        break;
+                                    }
+                                    var cardColor = document.createElement('img');
+                                    cardColor.setAttribute("src","images/"+rowData[n]+"Mana.png");
+                                    row.classList.add(rowData[n]+'Color');
+                                    cell.appendChild(cardColor);
+                                }
+                            row.appendChild(cell);
+
+                        cell = document.createElement('td');
+                            cell.setAttribute("style","text-align:center");
+                            cardScore = document.createTextNode(rowData[4]);
+                                cell.appendChild(cardScore);
+                            row.appendChild(cell);
+                        tableBody.appendChild(row);
+                    });
+            }
+            createTable(znrCards);
+        </script>
+
+        <script>
+            function autoSortTable(tableID) {
+                var table, rows, switching, i, x, y, shouldSwitch;
+                table = document.getElementById(tableID);
+                switching = true;
+                /*Make a loop that will continue until
+                no switching has been done:*/
+                while (switching) {
+                    //start by saying: no switching is done:
+                    switching = false;
+                    rows = table.rows;
+                    /*Loop through all table rows (except the
+                    first, which contains table headers):*/
+                    for (i = 1; i < (rows.length - 1); i++) {
+                    //start by saying there should be no switching:
+                    shouldSwitch = false;
+                    /*Get the two elements you want to compare,
+                    one from current row and one from the next:*/
+                    x = rows[i].getElementsByTagName("td")[2];
+                    y = rows[i + 1].getElementsByTagName("td")[2];
+                    //check if the two rows should switch place:
+                    if (Number(x.innerHTML) < Number(y.innerHTML)) {
+                        //if so, mark as a switch and break the loop:
+                        shouldSwitch = true;
+                        break;
+                    }
+                    }
+                    if (shouldSwitch) {
+                    /*If a switch has been marked, make the switch
+                    and mark that a switch has been done:*/
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    }
+                }
+            }
+            autoSortTable("wTable");
+            autoSortTable("uTable");
+            autoSortTable("bTable");
+            autoSortTable("rTable");
+            autoSortTable("gTable");
+            autoSortTable("cTable");
+        </script>
+
+        <script>
+            function sortTable(tableID) {
+                var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                table = document.getElementById(tableID);
+                switching = true;
+                // Set the sorting direction to ascending:
+                dir = "asc";
+                /* Make a loop that will continue until
+                no switching has been done: */
+                while (switching) {
+                    // Start by saying: no switching is done:
+                    switching = false;
+                    rows = table.rows;
+                    /* Loop through all table rows (except the
+                    first, which contains table headers): */
+                    for (i = 1; i < (rows.length - 1); i++) {
+                        // Start by saying there should be no switching:
+                        shouldSwitch = false;
+                        /* Get the two elements you want to compare,
+                        one from current row and one from the next: */
+                        x = rows[i].getElementsByTagName("td")[1];
+                        y = rows[i + 1].getElementsByTagName("td")[1];
+                        /* Check if the two rows should switch place,
+                        based on the direction, asc or desc: */
+                        if (dir == "asc") {
+                            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            // If so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                            }
+                        } else if (dir == "desc") {
+                            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            // If so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                            }
+                        }
+                    }
+                    if (shouldSwitch) {
+                        /* If a switch has been marked, make the switch
+                        and mark that a switch has been done: */
+                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                        switching = true;
+                        // Each time a switch is done, increase this count by 1:
+                        switchcount ++;
+                    } else {
+                        /* If no switching has been done AND the direction is "asc",
+                        set the direction to "desc" and run the while loop again. */
+                        if (switchcount == 0 && dir == "asc") {
+                            dir = "desc";
+                            switching = true;
+                        }
+                    }
+                }
+            }
+            </script>
+
+            <script>
+                function showHide(color) {
+                    var checkBox = document.getElementById(color+"Check");
+                    var div = document.getElementById(color+"Column");
+                    if (checkBox.checked == false){
+                        div.setAttribute("style","display:none;")
+                        var rows = document.getElementById("cTable").rows;
+                        for(var i = 0; i < rows.length; i++){
+                            if(rows[i].classList.contains(color+"Color")){
+                                rows[i].setAttribute("style","display:none");
+                            }
+                        }
+                    } else {
+                        div.setAttribute("style","display:inline-block;")
+                        var rows = document.getElementById("cTable").rows;
+                        for(var i = 0; i < rows.length; i++){
+                            if(rows[i].classList.contains(color+"Color")){
+                                if( (rows[i].classList.contains("wColor") && !(document.getElementById("wCheck").checked))
+                                ||  (rows[i].classList.contains("uColor") && !(document.getElementById("uCheck").checked))
+                                ||  (rows[i].classList.contains("bColor") && !(document.getElementById("bCheck").checked))
+                                ||  (rows[i].classList.contains("rColor") && !(document.getElementById("rCheck").checked))
+                                ||  (rows[i].classList.contains("gColor") && !(document.getElementById("gCheck").checked))
+                                ){
+                                    
+                                }else{
+                                    rows[i].setAttribute("style","display:table-row");
+                                }
+                            }
+                        }
+                    }
+                }
+            </script>
+
+    </body>
+</html>

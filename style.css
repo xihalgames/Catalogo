@@ -1,0 +1,53 @@
+body {
+    background-color: lightblue;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table td, .table th{
+    padding: 0.5rem 0.0rem 0.5rem 0.5rem;
+}
+
+td {
+    font-size: 0.75em;
+}
+
+/* The max width is dependant on the container (more info below) */
+.popover{
+    max-width: 800px; /* Max Width of the popover (depending on the container!) */
+}
+
+#bTableB{
+    background-color: #c8bfbc;
+}
+
+#cTableB{
+    background-color: #e1cb88;
+}
+
+#gTableB{
+    background-color: #99d4af;
+}
+
+#rTableB{
+    background-color: #fba990;
+}
+
+#tableCont{
+    padding: 0 30px;
+}
+
+#uTableB{
+    background-color: #a7dff8;
+}
+
+#wTableB{
+    background-color: #fffbd6;
+}
+
+#wColumn, #uColumn, #bColumn, #rColumn, #gColumn, #cColumn{
+    padding: 15px 8px 15px;
+    border: none !important;
+}
