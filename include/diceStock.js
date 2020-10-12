@@ -1,5 +1,5 @@
 var diceSet = new Array()
-diceSet[0] =  new Array({
+diceSet[0] =  {
     serie: "D",
     modelo: "01",
     //D-01
@@ -8,8 +8,8 @@ diceSet[0] =  new Array({
     descripcion: "temporal",
     categoria: 1
 
-})
-diceSet[1] =  new Array({
+}
+diceSet[1] =  {
     serie: "D",
     modelo: "02",
     //D-02
@@ -17,4 +17,4 @@ diceSet[1] =  new Array({
     nombre: "Escalofrio2",
     descripcion: "temporal",
     categoria: 1
-})
+}
