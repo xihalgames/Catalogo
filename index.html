@@ -230,7 +230,7 @@
                         row.appendChild(setBody);
 
                         var setModal = document.createElement('div');
-                            setModal = setAttribute("id",rowData.nombre);
+                            setModal.id = rowData.nombre;
                         row.appendChild(setModal);
                     diceContainer.appendChild(row);
                 });
