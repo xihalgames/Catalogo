@@ -154,11 +154,7 @@
                 $('[data-toggle="popover"]').popover({trigger: "focus", html: true, boundary:'window'})
             })
         </script>
-        <script>
-            function fillTable(){
-                return 0;
-            }
-        </script>
+
         <script>
             $(function () {
                 $('.popover-dismiss').popover({trigger: 'focus'})
@@ -231,160 +227,9 @@
             populateList(diceSet);
         </script>
         
-        <script>
-            function createTable(tableData) {
-                tableData.forEach(function(rowData) {
-                    var cardColor = rowData[0];
-                    var tableBody = document.getElementById(cardColor+"TableB");
-                    var row = document.createElement('tr');
-                        row.setAttribute("data-toggle","popover");
-                        row.setAttribute("data-content","<img src='"+rowData[3]+"' />");
-                        row.setAttribute("style","display:table-row");
-                        var cell = document.createElement('td');
-                            cell.setAttribute("style","width:20px");
-                            var cardImage = document.createElement('img');
-                                cardImage.setAttribute("src","images/"+rowData[2]+"Icon.png");
-                                cell.appendChild(cardImage);
-                                row.appendChild(cell);
-                        
-                        cell = document.createElement('td');        
-                            var cardName = document.createTextNode(" "+rowData[1]);
-                                cell.appendChild(cardName);
-                                var n;
-                                var rowLength = rowData.length;
-                                if(cardColor=="c" && rowLength == 5){
-                                    row.setAttribute("bgcolor","#909090");
-                                }
-                                if(rowLength > 5){
-                                    cardName = document.createTextNode(" ");
-                                    cell.appendChild(cardName);
-                                }
-                                for(n = 5; n < rowLength; n++){
-                                    if(rowData[n]=="l"){
-                                        row.setAttribute("bgcolor","#94714f");
-                                        break;
-                                    }
-                                    var cardColor = document.createElement('img');
-                                    cardColor.setAttribute("src","images/"+rowData[n]+"Mana.png");
-                                    row.classList.add(rowData[n]+'Color');
-                                    cell.appendChild(cardColor);
-                                }
-                            row.appendChild(cell);
-
-                        cell = document.createElement('td');
-                            cell.setAttribute("style","text-align:center");
-                            cardScore = document.createTextNode(rowData[4]);
-                                cell.appendChild(cardScore);
-                            row.appendChild(cell);
-                        tableBody.appendChild(row);
-                    });
-            }
-            createTable(znrCards);
-        </script>
-
-        <script>
-            function autoSortTable(tableID) {
-                var table, rows, switching, i, x, y, shouldSwitch;
-                table = document.getElementById(tableID);
-                switching = true;
-                /*Make a loop that will continue until
-                no switching has been done:*/
-                while (switching) {
-                    //start by saying: no switching is done:
-                    switching = false;
-                    rows = table.rows;
-                    /*Loop through all table rows (except the
-                    first, which contains table headers):*/
-                    for (i = 1; i < (rows.length - 1); i++) {
-                    //start by saying there should be no switching:
-                    shouldSwitch = false;
-                    /*Get the two elements you want to compare,
-                    one from current row and one from the next:*/
-                    x = rows[i].getElementsByTagName("td")[2];
-                    y = rows[i + 1].getElementsByTagName("td")[2];
-                    //check if the two rows should switch place:
-                    if (Number(x.innerHTML) < Number(y.innerHTML)) {
-                        //if so, mark as a switch and break the loop:
-                        shouldSwitch = true;
-                        break;
-                    }
-                    }
-                    if (shouldSwitch) {
-                    /*If a switch has been marked, make the switch
-                    and mark that a switch has been done:*/
-                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                    switching = true;
-                    }
-                }
-            }
-            autoSortTable("wTable");
-            autoSortTable("uTable");
-            autoSortTable("bTable");
-            autoSortTable("rTable");
-            autoSortTable("gTable");
-            autoSortTable("cTable");
-        </script>
-
-        <script>
-            function sortTable(tableID) {
-                var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-                table = document.getElementById(tableID);
-                switching = true;
-                // Set the sorting direction to ascending:
-                dir = "asc";
-                /* Make a loop that will continue until
-                no switching has been done: */
-                while (switching) {
-                    // Start by saying: no switching is done:
-                    switching = false;
-                    rows = table.rows;
-                    /* Loop through all table rows (except the
-                    first, which contains table headers): */
-                    for (i = 1; i < (rows.length - 1); i++) {
-                        // Start by saying there should be no switching:
-                        shouldSwitch = false;
-                        /* Get the two elements you want to compare,
-                        one from current row and one from the next: */
-                        x = rows[i].getElementsByTagName("td")[1];
-                        y = rows[i + 1].getElementsByTagName("td")[1];
-                        /* Check if the two rows should switch place,
-                        based on the direction, asc or desc: */
-                        if (dir == "asc") {
-                            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                            // If so, mark as a switch and break the loop:
-                            shouldSwitch = true;
-                            break;
-                            }
-                        } else if (dir == "desc") {
-                            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                            // If so, mark as a switch and break the loop:
-                            shouldSwitch = true;
-                            break;
-                            }
-                        }
-                    }
-                    if (shouldSwitch) {
-                        /* If a switch has been marked, make the switch
-                        and mark that a switch has been done: */
-                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                        switching = true;
-                        // Each time a switch is done, increase this count by 1:
-                        switchcount ++;
-                    } else {
-                        /* If no switching has been done AND the direction is "asc",
-                        set the direction to "desc" and run the while loop again. */
-                        if (switchcount == 0 && dir == "asc") {
-                            dir = "desc";
-                            switching = true;
-                        }
-                    }
-                }
-            }
-            </script>
-
             <script>
-                function showHide(color) {
-                    var checkBox = document.getElementById(color+"Check");
+                function showHide(param) {
+                    var checkBox = document.getElementById(param+"Check");
                     var rows = document.getElementById("diceSetsContainer").children;
                     if (checkBox.checked == false){
                         for(var i = 0; i < rows.length; i++){
