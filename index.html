@@ -192,6 +192,10 @@
                                 var setTitleText = document.createTextNode(rowData.nombre+" ("+rowData.serie+"-"+rowData.modelo+")");
                                 setTitle.appendChild(setTitleText);
                             setBody.appendChild(setTitle);
+                            var setModelName = document.createElement('h6');
+                                var setModelText = document.createTextNode("("+rowData.serie+"-"+rowData.modelo+")");
+                                setModelName.appendChild(setModelText);
+                            setBody.appendChild(setModelName);
                             var setDesc = document.createElement('p');
                                 setDesc.setAttribute("class","card-text");
                                 var setDescText = document.createTextNode(rowData.descripcion);
