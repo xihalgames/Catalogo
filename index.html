@@ -195,19 +195,12 @@
         <script>
             function populateList(tableData) {
                 tableData.forEach(function(rowData) {
-                    var ser = rowData.serie;
-                    var mod = rowData.modelo;
-                    var qty = rowData.stock;
-                    var name = rowData.nombre;
-                    var desc = rowData.descripcion;
-                    var cat = rowData.categoria;
-
                     var diceContainer = document.getElementById("diceSetsContainer");
                     var row = document.createElement('div');
                         row.setAttribute("class","card");
                         var setImage = document.createElement('img');
                             setImage.setAttribute("class","card-img-top border-bottom");
-                            setImage.setAttribute("src","images/dice/"+ser+"-"+mod+".png");
+                            setImage.setAttribute("src","images/dice/"+rowData.serie+"-"+rowData.modelo+".png");
                             setImage.setAttribute("tabindex","0");
                             setImage.setAttribute("data-toggle","popover");
                             setImage.setAttribute("data-placement","bottom");
