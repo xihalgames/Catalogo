@@ -172,6 +172,11 @@
                     var diceContainer = document.getElementById("diceSetsContainer");
                     var row = document.createElement('div');
                         row.setAttribute("class","card");
+                        if(rowData.categoria==0){
+                            row.setAttribute("style","display:inline-block");
+                        }else{
+                            row.setAttribute("style","display:hidden");
+                        }
                         var setImage = document.createElement('img');
                             setImage.setAttribute("class","card-img-top border-bottom");
                             setImage.setAttribute("src","images/dice/"+rowData.serie+"-"+rowData.modelo+".png");

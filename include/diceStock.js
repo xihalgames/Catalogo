@@ -7,7 +7,6 @@ diceSet[0] =  {
     nombre: "Escalofrio1",
     descripcion: "temporal",
     categoria: 1
-
 }
 diceSet[1] =  {
     serie: "D",
