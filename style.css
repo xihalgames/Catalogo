@@ -3,13 +3,13 @@ body {
 }
 
 .btn-group {
-    padding-left: 10px;
+    padding-right: 10px;
 }    
 
 .card {
     width: 180px;
     display: inline-block;
-    margin: 0.5rem 0.0rem 0.5rem 0.5rem;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
 .table {
