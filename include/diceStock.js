@@ -4,7 +4,7 @@ diceSet[0] =  {
     modelo: "01",
     //D-01
     stock: "10",
-    nombre: "Escalofrio1",
+    nombre: "D-01",
     descripcion: "temporal",
     categoria: 1
 }
@@ -13,7 +13,7 @@ diceSet[1] =  {
     modelo: "02",
     //D-02
     stock: "10",
-    nombre: "Escalofrio2",
+    nombre: "D-02",
     descripcion: "temporal",
     categoria: 1
 }
@@ -22,7 +22,7 @@ diceSet[2] =  {
     modelo: "03",
     //D-03
     stock: "10",
-    nombre: "Escalofrio2",
+    nombre: "D-03",
     descripcion: "temporal",
     categoria: 1
 }
@@ -31,7 +31,7 @@ diceSet[3] =  {
     modelo: "04",
     //D-04
     stock: "10",
-    nombre: "Escalofrio2",
+    nombre: "D-04",
     descripcion: "temporal",
     categoria: 1
 }
@@ -40,7 +40,7 @@ diceSet[4] =  {
     modelo: "05",
     //D-05
     stock: "10",
-    nombre: "Escalofrio2",
+    nombre: "D-05",
     descripcion: "temporal",
     categoria: 1
 }
