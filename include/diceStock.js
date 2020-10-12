@@ -5,7 +5,8 @@ diceSet[0] =  new Array({
     //D-01
     stock: "10",
     nombre: "Escalofrio1",
-    desc: "temporal"
+    descripcion: "temporal",
+    categoria: 1
 
 })
 diceSet[1] =  new Array({
@@ -14,5 +15,6 @@ diceSet[1] =  new Array({
     //D-02
     stock: "10",
     nombre: "Escalofrio2",
-    desc: "temporal"
+    descripcion: "temporal",
+    categoria: 1
 })

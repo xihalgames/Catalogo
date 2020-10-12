@@ -193,6 +193,66 @@
 
         <script src="include/diceStock.js"></script>
         <script>
+            function populateList(tableData) {
+                tableData.forEach(function(rowData) {
+                    var ser = rowData.serie;
+                    var mod = rowData.modelo;
+                    var qty = rowData.stock;
+                    var name = rowData.nombre;
+                    var desc = rowData.descripcion;
+                    var cat = rowData.categoria;
+
+
+
+                    var cardColor = rowData[0];
+                    var tableBody = document.getElementById(cardColor+"TableB");
+                    var row = document.createElement('tr');
+                        row.setAttribute("data-toggle","popover");
+                        row.setAttribute("data-content","<img src='"+rowData[3]+"' />");
+                        row.setAttribute("style","display:table-row");
+                        var cell = document.createElement('td');
+                            cell.setAttribute("style","width:20px");
+                            var cardImage = document.createElement('img');
+                                cardImage.setAttribute("src","images/"+rowData[2]+"Icon.png");
+                                cell.appendChild(cardImage);
+                                row.appendChild(cell);
+                        
+                        cell = document.createElement('td');        
+                            var cardName = document.createTextNode(" "+rowData[1]);
+                                cell.appendChild(cardName);
+                                var n;
+                                var rowLength = rowData.length;
+                                if(cardColor=="c" && rowLength == 5){
+                                    row.setAttribute("bgcolor","#909090");
+                                }
+                                if(rowLength > 5){
+                                    cardName = document.createTextNode(" ");
+                                    cell.appendChild(cardName);
+                                }
+                                for(n = 5; n < rowLength; n++){
+                                    if(rowData[n]=="l"){
+                                        row.setAttribute("bgcolor","#94714f");
+                                        break;
+                                    }
+                                    var cardColor = document.createElement('img');
+                                    cardColor.setAttribute("src","images/"+rowData[n]+"Mana.png");
+                                    row.classList.add(rowData[n]+'Color');
+                                    cell.appendChild(cardColor);
+                                }
+                            row.appendChild(cell);
+
+                        cell = document.createElement('td');
+                            cell.setAttribute("style","text-align:center");
+                            cardScore = document.createTextNode(rowData[4]);
+                                cell.appendChild(cardScore);
+                            row.appendChild(cell);
+                        tableBody.appendChild(row);
+                    });
+            }
+            populateList(diceSet);
+        </script>
+        
+        <script>
             function createTable(tableData) {
                 tableData.forEach(function(rowData) {
                     var cardColor = rowData[0];
