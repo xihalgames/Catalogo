@@ -42,5 +42,5 @@ diceSet[4] =  {
     stock: "10",
     nombre: "Escalofrío 5",
     descripcion: "temporal",
-    categoria: 1
+    categoria: 0
 }
