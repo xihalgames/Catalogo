@@ -31,6 +31,10 @@ td {
     background-color: #99d4af;
 }
 
+#menuBar{
+    padding: 0 0 10px;
+}
+
 #rTableB{
     background-color: #fba990;
 }
