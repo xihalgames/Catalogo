@@ -229,26 +229,7 @@
                             setBody.appendChild(setDesc);
                         row.appendChild(setBody);
 
-                        var setModal = document.createElement('div');
-                            setModal = setAttribute("id",rowData.serie+"-"+rowData.modelo+"Modal");
-                            setModal = setAttribute("class","modal-fade");
-                            setModal = setAttribute("tabindex","-1");
-                            setModal = setAttribute("role","dialog");
-                            var setModalDialog = document.createElement('div');
-                                setModalDialog = setAttribute("class","modal-dialog modal-dialog-centered");
-                                setModalDialog = setAttribute("style","max-width:1200px");
-                                var setModalContent = document.createElement('div');
-                                    setModalContent = setAttribute("class","modal-content");
-                                    var setModalBody = document.createElement('div');
-                                        setModalContent = setAttribute("class","modal-body");
-                                        var setModalImg = document.createElement('img');
-                                            setModalImg.setAttribute("src","images/dice/"+rowData.serie+"-"+rowData.modelo+"B.jpg");
-                                            setModalImg.setAttribute("class","img-responsive");
-                                        setModalBody.appendChild(setModalImg);
-                                    setModalContent.appendChild(setModalBody);
-                                setModalDialog.appendChild(setModalContent);
-                            setModal.appendChild(setModalDialog);
-                        row.appendChild(setModal);
+                        
                     diceContainer.appendChild(row);
                 });
             }
