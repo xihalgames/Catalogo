@@ -10,6 +10,7 @@
         <div class="container-fluid bg-dark text-white siteLogo">
             <img src="images/Logo_Xihal_Sm.png" width="125px" height="66px"></img>
         </div>
+        
         <div class="container-fluid bg-dark text-white" id="menuBar">
             <div class="btn-group">
                 <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -32,117 +33,13 @@
             <input type="checkbox" id="wCheck" unchecked onclick="showHide('w')">
             Mostrar dados con costo extra
         </div>
+
         <div class="container-fluid bg-light" id="mainContainer" style="padding:0 10%">
             <div class="row justify-content-center" id="diceSetsContainer">
                 <!-- Sets will populate here -->
             </div>
         </div>
 
-        <div class="container-fluid bg-light" id="tableCont">
-            <div class="row">
-                <!-- White Table -->
-                <div class="col-12 col-md-6 col-lg-4 col-xl-2 border" id="wColumn" style="display:inline-block;">
-                    <div class="card">
-                        <table class="table table-hover" id="wTable">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th onclick="sortTable('wTable')">Card</th>
-                                    <th onclick="autoSortTable('wTable')" style="text-align:center">Score</th>
-                                </tr>
-                            </thead>
-                            <tbody id="wTableB">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- Blue Table -->
-                <div class="col-12 col-md-6 col-lg-4 col-xl-2 border" id="uColumn" style="display:inline-block;">
-                    <div class="card">
-                        <table class="table table-hover" id="uTable">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th onclick="sortTable('uTable')">Card</th>
-                                    <th onclick="autoSortTable('uTable')" style="text-align:center">Score</th>
-                                </tr>
-                            </thead>
-                            <tbody id="uTableB">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- Black Table -->
-                <div class="col-12 col-md-6 col-lg-4 col-xl-2 border" id="bColumn" style="display:inline-block;">
-                    <div class="card">
-                        <table class="table table-hover" id="bTable">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th onclick="sortTable('bTable')">Card</th>
-                                    <th onclick="autoSortTable('bTable')" style="text-align:center">Score</th>
-                                </tr>
-                            </thead>
-                            <tbody id="bTableB">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- Red Table -->
-                <div class="col-12 col-md-6 col-lg-4 col-xl-2 border" id="rColumn" style="display:inline-block;">
-                    <div class="card">
-                        <table class="table table-hover" id="rTable">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th onclick="sortTable('rTable')">Card</th>
-                                    <th onclick="autoSortTable('rTable')" style="text-align:center">Score</th>
-                                </tr>
-                            </thead>
-                            <tbody id="rTableB">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- Green Table -->
-                <div class="col-12 col-md-6 col-lg-4 col-xl-2 border" id="gColumn" style="display:inline-block;">
-                    <div class="card">
-                        <table class="table table-hover" id="gTable">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th onclick="sortTable('gTable')">Card</th>
-                                    <th onclick="autoSortTable('gTable')" style="text-align:center">Score</th>
-                                </tr>
-                            </thead>
-                            <tbody id="gTableB">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- Gold Table -->
-                <div class="col-12 col-md-6 col-lg-4 col-xl-2 border" id="cColumn" style="display:inline-block;">
-                    <div class="card">
-                        <table class="table table-hover" id="cTable">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th onclick="sortTable('cTable')">Card</th>
-                                    <th onclick="autoSortTable('cTable')" style="text-align:center">Score</th>
-                                </tr>
-                            </thead>
-                            <tbody id="cTableB">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-            </div>
-        </div>
         <p>Hosted with GitHub Pages. v.0.1-HTML</p>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
