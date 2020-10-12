@@ -1,7 +1,3 @@
-h5  {
-    margin-bottom: 0.75rem;
-}
-
 .btn-group {
     padding-right: 10px;
 }    
@@ -13,7 +9,11 @@ h5  {
 }
 
 .card-body {
-    padding: 0.5rem 1.25rem 1.25rem 1.25rem;
+    padding: 0.6rem 1.25rem 0.9rem 1.25rem;
+}
+
+.card-title {
+    margin-bottom: 0.25rem;
 }
 
 .siteLogo {
