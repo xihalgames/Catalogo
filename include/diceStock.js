@@ -15,7 +15,7 @@ diceSet[1] =  {
     stock: "10",
     nombre: "Escalofrío 2",
     descripcion: "temporal",
-    categoria: 1
+    categoria: 0
 }
 diceSet[2] =  {
     serie: "D",
@@ -33,7 +33,7 @@ diceSet[3] =  {
     stock: "10",
     nombre: "Escalofrío 4",
     descripcion: "temporal",
-    categoria: 1
+    categoria: 0
 }
 diceSet[4] =  {
     serie: "D",
