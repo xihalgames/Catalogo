@@ -33,7 +33,7 @@
             Mostrar dados con costo extra
         </div>
         <div class="container-fluid" id="Test" style="padding:0 10%">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" id="diceSetsContainer">
                 <div class="card">
                     <img class="card-img-top border-bottom" src="images/D/D-01.png" tabindex="0" data-toggle="popover" data-placement="bottom" data-content="<img src='images/D/D-01B.jpg'></img>"></img>
                     <div class="card-body">
@@ -202,52 +202,32 @@
                     var desc = rowData.descripcion;
                     var cat = rowData.categoria;
 
-
-
-                    var cardColor = rowData[0];
-                    var tableBody = document.getElementById(cardColor+"TableB");
-                    var row = document.createElement('tr');
-                        row.setAttribute("data-toggle","popover");
-                        row.setAttribute("data-content","<img src='"+rowData[3]+"' />");
-                        row.setAttribute("style","display:table-row");
-                        var cell = document.createElement('td');
-                            cell.setAttribute("style","width:20px");
-                            var cardImage = document.createElement('img');
-                                cardImage.setAttribute("src","images/"+rowData[2]+"Icon.png");
-                                cell.appendChild(cardImage);
-                                row.appendChild(cell);
-                        
-                        cell = document.createElement('td');        
-                            var cardName = document.createTextNode(" "+rowData[1]);
-                                cell.appendChild(cardName);
-                                var n;
-                                var rowLength = rowData.length;
-                                if(cardColor=="c" && rowLength == 5){
-                                    row.setAttribute("bgcolor","#909090");
-                                }
-                                if(rowLength > 5){
-                                    cardName = document.createTextNode(" ");
-                                    cell.appendChild(cardName);
-                                }
-                                for(n = 5; n < rowLength; n++){
-                                    if(rowData[n]=="l"){
-                                        row.setAttribute("bgcolor","#94714f");
-                                        break;
-                                    }
-                                    var cardColor = document.createElement('img');
-                                    cardColor.setAttribute("src","images/"+rowData[n]+"Mana.png");
-                                    row.classList.add(rowData[n]+'Color');
-                                    cell.appendChild(cardColor);
-                                }
-                            row.appendChild(cell);
-
-                        cell = document.createElement('td');
-                            cell.setAttribute("style","text-align:center");
-                            cardScore = document.createTextNode(rowData[4]);
-                                cell.appendChild(cardScore);
-                            row.appendChild(cell);
-                        tableBody.appendChild(row);
-                    });
+                    var diceContainer = document.getElementById("diceSetsContainer");
+                    var row = document.createElement('div');
+                        row.setAttribute("class","card");
+                        var setImage = document.createElement('img');
+                            setImage.setAttribute("class","card-img-top border-bottom");
+                            setImage.setAttribute("src","images/dice/"+rowData.serie+"-"+rowData.modelo+".png");
+                            setImage.setAttribute("tabindex","0");
+                            setImage.setAttribute("data-toggle","popover");
+                            setImage.setAttribute("data-placement","bottom");
+                            setImage.setAttribute("data-content","<img src='images/dice/'"+rowData.serie+"'-'"+rowData.modelo+"'B.jpg' />");
+                        row.appendChild(setImage);
+                        var setBody = document.createElement('div');
+                            setBody.setAttribute("class","card-body");
+                            var setTitle = document.createElement('h5');
+                                setTitle.setAttribute("class","card-title");
+                                var setTitleText = document.createTextNode(rowData.serie+"'-'"+rowData.modelo);
+                                setTitle.appendChild(setTitleText);
+                            setBody.appendChild(setTitle);
+                            var setDesc = document.createElement('p');
+                                setDesc.setAttribute("class","card-text");
+                                var setDescText = document.createTextNode(rowData.descripcion);
+                                setDesc.appendChild(setDescText);
+                            setBody.appendChild(setDesc);
+                        row.appendChild(setBody);
+                    diceContainer.appendChild(row);
+                });
             }
             populateList(diceSet);
         </script>
