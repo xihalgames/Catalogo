@@ -63,6 +63,15 @@
                     </div>
                 </div>
             </div>
+            <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="//placehold.it/1000x600" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="container-fluid bg-light" id="tableCont">
             <div class="row">
@@ -202,7 +211,7 @@
                             setImage.setAttribute("class","card-img-top border-bottom");
                             setImage.setAttribute("src","images/dice/"+rowData.serie+"-"+rowData.modelo+".png");
                             setImage.setAttribute("tabindex","0");
-                            setImage.setAttribute("data-toggle","popover");
+                            setImage.setAttribute("data-toggle","modal");
                             setImage.setAttribute("data-container","body");
                             setImage.setAttribute("data-placement","auto");
                             setImage.setAttribute("data-content","<img src='images/dice/"+rowData.serie+"-"+rowData.modelo+"B.jpg' />");
