@@ -12,6 +12,10 @@ body {
     margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
+.siteLogo {
+    padding-left: 20px;
+}
+
 .table {
     margin-bottom: 0;
 }
