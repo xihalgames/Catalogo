@@ -172,6 +172,7 @@
                     var diceContainer = document.getElementById("diceSetsContainer");
                     var row = document.createElement('div');
                         row.setAttribute("class","card");
+                        row.classList.add("cat"+rowData.categoria);
                         if(rowData.categoria==0){
                             row.setAttribute("style","display:inline-block");
                         }else{
@@ -384,30 +385,22 @@
             <script>
                 function showHide(color) {
                     var checkBox = document.getElementById(color+"Check");
-                    var div = document.getElementById(color+"Column");
+                    var rows = document.getElementById("diceSetsContainer").children;
                     if (checkBox.checked == false){
-                        div.setAttribute("style","display:none;")
-                        var rows = document.getElementById("cTable").rows;
                         for(var i = 0; i < rows.length; i++){
-                            if(rows[i].classList.contains(color+"Color")){
+                            if(rows[i].classList.contains("cat0")){
+                                //rows[i].setAttribute("style","display:none");
+                            }else{
                                 rows[i].setAttribute("style","display:none");
                             }
                         }
                     } else {
-                        div.setAttribute("style","display:inline-block;")
-                        var rows = document.getElementById("cTable").rows;
+                        var rows = document.getElementById("diceSetsContainer").children;
                         for(var i = 0; i < rows.length; i++){
-                            if(rows[i].classList.contains(color+"Color")){
-                                if( (rows[i].classList.contains("wColor") && !(document.getElementById("wCheck").checked))
-                                ||  (rows[i].classList.contains("uColor") && !(document.getElementById("uCheck").checked))
-                                ||  (rows[i].classList.contains("bColor") && !(document.getElementById("bCheck").checked))
-                                ||  (rows[i].classList.contains("rColor") && !(document.getElementById("rCheck").checked))
-                                ||  (rows[i].classList.contains("gColor") && !(document.getElementById("gCheck").checked))
-                                ){
-                                    
-                                }else{
-                                    rows[i].setAttribute("style","display:table-row");
-                                }
+                            if(rows[i].classList.contains("cat0")){
+                                //rows[i].setAttribute("style","display:none");
+                            }else{
+                                rows[i].setAttribute("style","display:inline-block");
                             }
                         }
                     }
