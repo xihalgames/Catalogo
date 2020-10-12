@@ -2,7 +2,11 @@ body {
     background-color: lightblue;
 }
 
-.card-img-top  {
+.btn-group {
+    padding-left: 10px;
+}    
+
+.card {
     width: 180px;
     display: inline-block;
     padding: 0.5rem 0.0rem 0.5rem 0.5rem;
