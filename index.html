@@ -201,7 +201,7 @@
                             setModal.setAttribute("role","dialog");
                             var setModalDialog = document.createElement('div');
                                 setModalDialog.setAttribute("class","modal-dialog modal-dialog-centered");
-                                setModalDialog.setAttribute("style","max-width:50%; object-fit:contain;");
+                                setModalDialog.setAttribute("style","max-width:90vw;");
                                 var setModalContent = document.createElement('div');
                                     setModalContent.setAttribute("class","modal-content");
                                     var setModalBody = document.createElement('div');
@@ -209,6 +209,7 @@
                                         var setModalImg = document.createElement('img');
                                             setModalImg.setAttribute("src","images/dice/"+rowData.serie+"-"+rowData.modelo+"B.jpg");
                                             setModalImg.setAttribute("class","img-responsive");
+                                            setModalImg.setAttribute("style","max-width:50%; object-fit:contain;");
                                         setModalBody.appendChild(setModalImg);
                                     setModalContent.appendChild(setModalBody);
                                 setModalDialog.appendChild(setModalContent);
