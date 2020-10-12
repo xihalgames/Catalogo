@@ -211,13 +211,13 @@
                             setImage.setAttribute("tabindex","0");
                             setImage.setAttribute("data-toggle","popover");
                             setImage.setAttribute("data-placement","bottom");
-                            setImage.setAttribute("data-content","<img src='images/dice/'"+rowData.serie+"'-'"+rowData.modelo+"'B.jpg' />");
+                            setImage.setAttribute("data-content","<img src='images/dice/"+rowData.serie+"-"+rowData.modelo+"B.jpg' />");
                         row.appendChild(setImage);
                         var setBody = document.createElement('div');
                             setBody.setAttribute("class","card-body");
                             var setTitle = document.createElement('h5');
                                 setTitle.setAttribute("class","card-title");
-                                var setTitleText = document.createTextNode(rowData.serie+"'-'"+rowData.modelo);
+                                var setTitleText = document.createTextNode(rowData.serie+"-"+rowData.modelo);
                                 setTitle.appendChild(setTitleText);
                             setBody.appendChild(setTitle);
                             var setDesc = document.createElement('p');
