@@ -177,7 +177,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <script>
             $(function () {
-                $('[data-toggle="popover"]').popover({trigger: "focus", html: true, boundary:'window'})
+                $('[data-toggle="popover"]').popover({trigger: "focus", html: true, boundary:'window', position:'absolute', left:'50%' })
             })
         </script>
         <script>
@@ -204,6 +204,7 @@
                             setImage.setAttribute("tabindex","0");
                             setImage.setAttribute("data-toggle","popover");
                             setImage.setAttribute("data-container","body");
+                            setImage.setAttribute("data-placement","auto bottom");
                             setImage.setAttribute("data-content","<img src='images/dice/"+rowData.serie+"-"+rowData.modelo+"B.jpg' />");
                         row.appendChild(setImage);
                         var setBody = document.createElement('div');
