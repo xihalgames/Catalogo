@@ -12,6 +12,10 @@ body {
     margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
+.card-body {
+    padding: 1.25rem 0.5rem
+}
+
 .siteLogo {
     padding: 3px 0 3px 25px;
 }
